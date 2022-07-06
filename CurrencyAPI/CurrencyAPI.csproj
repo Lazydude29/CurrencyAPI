@@ -34,6 +34,9 @@
     <StartupObject>CurrencyAPI.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,16 +49,34 @@
     <Reference Include="SAPBusinessOneSDK" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ExchRates.b1f">
+      <FormCategory>SystemForm</FormCategory>
+    </None>
+    <None Include="ExchRates.b1f__orig_srf">
+      <DependentUpon>ExchRates.b1f</DependentUpon>
+    </None>
     <None Include="Form1.b1f">
       <FormCategory>UserForm</FormCategory>
     </None>
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Enums\CurrencyEnums.cs" />
+    <Compile Include="DTOs\Currencies.cs" />
+    <Compile Include="DTOs\Currency.cs" />
+    <Compile Include="Controllers\FillCurrencyController.cs" />
+    <Compile Include="Interfaces\Services\ICurrencyRateService.cs" />
+    <Compile Include="Services\CurrencyService.cs" />
+    <Compile Include="ExchRates.b1f.cs">
+      <DependentUpon>ExchRates.b1f</DependentUpon>
+    </Compile>
     <Compile Include="Form1.b1f.cs">
       <DependentUpon>Form1.b1f</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

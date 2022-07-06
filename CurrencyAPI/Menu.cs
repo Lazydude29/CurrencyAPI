@@ -1,4 +1,5 @@
-﻿using SAPbouiCOM.Framework;
+﻿//using SAPbouiCOM;
+using SAPbouiCOM.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,6 +25,7 @@ namespace CurrencyAPI
             oCreationPackage.Enabled = true;
             oCreationPackage.Position = -1;
 
+
             oMenus = oMenuItem.SubMenus;
 
             try
@@ -47,6 +49,12 @@ namespace CurrencyAPI
                 oCreationPackage.UniqueID = "CurrencyAPI.Form1";
                 oCreationPackage.String = "Form1";
                 oMenus.AddEx(oCreationPackage);
+
+
+                oCreationPackage.Type = SAPbouiCOM.BoMenuType.mt_POPUP;
+                oCreationPackage.UniqueID = "CurrencyAPI.ExchRates";
+                oCreationPackage.String = "Exchange Rates and Indexes";
+                oMenus.AddEx(oCreationPackage);
             }
             catch (Exception er)
             { //  Menu already exists
@@ -65,6 +73,8 @@ namespace CurrencyAPI
                     Form1 activeForm = new Form1();
                     activeForm.Show();
                 }
+              
+                
             }
             catch (Exception ex)
             {
