@@ -59,6 +59,7 @@
       <FormCategory>UserForm</FormCategory>
     </None>
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\Form1Controller.cs" />
     <Compile Include="Enums\CurrencyEnums.cs" />
     <Compile Include="DTOs\Currencies.cs" />
     <Compile Include="DTOs\Currency.cs" />
