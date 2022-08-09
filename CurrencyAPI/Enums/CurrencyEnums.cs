@@ -15,6 +15,8 @@ namespace CurrencyAPI
         USD,
         [Description("გირვანქა სტერლინგი")]
         GBP,
+        [Description("რუსული რუბლი")]
+        RUB,
 
     }
 }
